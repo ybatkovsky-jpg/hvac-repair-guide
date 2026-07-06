@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Интерактивное пособие для ремонтников холодильных установок и систем кондиционирования">
+  <title>Пособие для ремонтника — Интерактивный курс</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Пропустить навигацию (a11y) -->
+  <a href="#main-content" class="skip-link" aria-label="Перейти к основному содержанию">Перейти к содержанию</a>
+
+  <!-- Шапка -->
+  <header class="header" role="banner">
+    <button class="menu-toggle" aria-label="Открыть меню навигации" aria-expanded="false" aria-controls="sidebar">
+      <span class="menu-icon"></span>
+    </button>
+    <div class="header-info">
+      <h1 class="header-title">Пособие для ремонтника</h1>
+      <p class="header-subtitle">Холодильные установки и системы кондиционирования</p>
+    </div>
+    <div class="header-progress" aria-label="Общий прогресс обучения">
+      <svg class="progress-ring" viewBox="0 0 36 36" aria-hidden="true">
+        <circle class="progress-ring-bg" cx="18" cy="18" r="15.5"/>
+        <circle class="progress-ring-fill" cx="18" cy="18" r="15.5" id="progress-ring"/>
+      </svg>
+      <span class="progress-text" id="progress-percent">0%</span>
+    </div>
+  </header>
+
+  <div class="layout">
+    <!-- Боковое меню -->
+    <nav class="sidebar" id="sidebar" role="navigation" aria-label="Модули обучения">
+      <div class="sidebar-header">
+        <h2 class="sidebar-title">Модули курса</h2>
+        <span class="sidebar-module-count" id="module-count">0/8</span>
+      </div>
+      <ul class="module-list" id="module-list">
+        <!-- Заполняется из JS -->
+      </ul>
+      <div class="sidebar-footer">
+        <a href="#glossary" class="sidebar-link" data-nav="glossary">📖 Глоссарий</a>
+        <button class="sidebar-link btn-reset" id="btn-reset-progress" aria-label="Сбросить прогресс">
+          🔄 Сбросить прогресс
+        </button>
+      </div>
+    </nav>
+
+    <!-- Основной контент -->
+    <main class="main" id="main-content" role="main">
+      <!-- Приветственная страница -->
+      <section class="welcome" id="section-welcome">
+        <div class="welcome-hero">
+          <h2 class="welcome-title">Добро пожаловать!</h2>
+          <p class="welcome-text">
+            Интерактивный курс на основе книги <strong>Патрика Котзаогланиана</strong>
+            «Пособие для ремонтника. Справочное руководство по монтажу, эксплуатации,
+            обслуживанию и ремонту современного оборудования холодильных установок
+            и систем кондиционирования».
+          </p>
+          <div class="welcome-meta">
+            <span>📄 822 страницы</span>
+            <span>📚 8 модулей</span>
+            <span>✅ 40+ тестовых вопросов</span>
+            <span>🔧 200+ упражнений в оригинале</span>
+          </div>
+          <p class="welcome-note">
+            <em>Перевод с французского под редакцией д.т.н., проф. В.Б. Сапожникова</em>
+          </p>
+          <button class="btn btn-primary" id="btn-start" aria-label="Начать обучение">
+            Начать обучение →
+          </button>
+        </div>
+      </section>
+
+      <!-- Контент модуля (динамический) -->
+      <section class="module-content hidden" id="section-module" aria-live="polite">
+        <!-- Заполняется из JS -->
+      </section>
+
+      <!-- Тест (динамический) -->
+      <section class="quiz-content hidden" id="section-quiz" aria-live="polite">
+        <!-- Заполняется из JS -->
+      </section>
+
+      <!-- Глоссарий -->
+      <section class="glossary-content hidden" id="section-glossary" aria-live="polite">
+        <!-- Заполняется из JS -->
+      </section>
+
+      <!-- Статистика -->
+      <section class="stats-content hidden" id="section-stats" aria-live="polite">
+        <!-- Заполняется из JS -->
+      </section>
+    </main>
+  </div>
+
+  <!-- Подвал -->
+  <footer class="footer" role="contentinfo">
+    <p>© 2007 АНОО «Учебный центр «Остров». Оригинал: Patrick KOTZAOGLANIAN, Manuel Pratique de Dépannage, 4-e éd.</p>
+    <p>Интерактивная версия создана в образовательных целях.</p>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/progress.js"></script>
+  <script src="js/quiz.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
